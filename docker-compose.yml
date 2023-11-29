@@ -1,0 +1,25 @@
+#menggunakan versi 3.7
+version: '3.7'
+
+services:
+#mengatur service untuk item-app
+  item-app:
+    image: lailafadilah383/item-app:v1
+    restart: always
+    ports:
+      - 80:8080
+    depends_on:
+      - item-db
+
+#mengatur service untuk item-db
+  item-db:
+    image: mongo:3
+    restart: always
+    ports:
+    - 27017:27017
+    volumes:
+      - app-db:/data/db
+
+#mengatur volume untuk item-db
+volumes:
+  app-db:
