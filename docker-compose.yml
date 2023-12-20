@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   order-service:
-    image: lailafadilah383/order-service:v1
+    image: lailafadilah383/order-service:latest
     ports:
       - "3000:3000"
     environment:
@@ -14,7 +14,7 @@ services:
       - app_network
 
   shipping-service:
-    image: lailafadilah383/shipping-service:v1
+    image: lailafadilah383/shipping-service:latest
     ports:
       - "3001:3001"
     depends_on:
